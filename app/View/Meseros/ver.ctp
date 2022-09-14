@@ -9,4 +9,22 @@
 echo $this->Html->link('Volver a lista de meseros',array(
     'controller'=>'meseros','action'=>'index'
 ));
+
 ?>
+<br>
+<br>
+<h3>Encargado de las mesas:</h3>
+<?php 
+    if (empty($mesero['Mesa'])) { ?>
+        <p>No tiene mesas asociadas</p>
+    <?php } ?>
+
+    <?php foreach($mesero['Mesa'] as $m): ?>
+        <p>
+            Codigo: <?php echo $m['codigo']; ?> <br>
+            Puestos: <?php echo $m['puestos']; ?> <br>
+            Posicion: <?php echo $m['posicion']; ?> <br>
+            Creado: <?php echo $m['created']; ?> <br>
+
+        </p>
+    <?php endforeach; ?>
